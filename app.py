@@ -18,6 +18,9 @@ if image is not None:
     im1 = picture.crop((left, top, right, bottom))
     im1.save(f"temp/result.png")
 
+    for i in os.listdir("temp"):
+        st.write(i)
+
     # image_file = f"temp/{im1}" 
     # data_image = Image.open(im1)
     # picture = data_image.save(f"temp/{data_image.name}")
