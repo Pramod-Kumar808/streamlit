@@ -2,13 +2,13 @@ import streamlit as st
 import os
 import shutil
 import PIL
+import random
 from PIL import Image
 
 image = st.file_uploader("Upload an image")
 if image is not None:
     os.makedirs("temp", exist_ok=True)
     picture = Image.open(image)
-    file_name = os.path.basename(picture)
     width, height = picture.size
     left = 155
     top = 65
@@ -16,7 +16,8 @@ if image is not None:
     bottom = 270
 
     im1 = picture.crop((left, top, right, bottom))
-    im1.save(f"temp/{file_name}")
+    save_name = random.random()
+    im1.save(f"temp/{save_name}.jpg")
 
     for i in os.listdir("temp"):
         st.write(i)
