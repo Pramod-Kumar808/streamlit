@@ -8,7 +8,7 @@ import cv2
 
 image = st.file_uploader("Upload an image")
 if image is not None:
-    picture = cv2.imerad(image)
+    picture = cv2.imread(image)
     st.success("uplodaed")
     
 else:
